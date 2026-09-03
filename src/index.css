@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #14181a;
+  --surface: #1d2423;
+  --surface-raised: #232b29;
+  --line: #2c3532;
+  --amber: #c46dd6;
+  --amber-dim: #9750a8;
+  --cream: #f1ecdd;
+  --muted: #8b948f;
+  --red: #e07856;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body);
+}
