@@ -4,7 +4,7 @@ import type { Playlist as PlaylistData, Song } from './types'
 import { getYoutubeId, fetchVideoTitle } from './utils/youtube'
 import { useYouTubePlayer } from './hooks/useYouTubePlayer'
 import { useAudioPlayer } from './hooks/useAudioPlayer'
-import { saveLocalFile, getLocalFile, deleteLocalFile, clearLocalFiles } from './utils/localFileStore'
+import { saveLocalFile, getLocalFile, deleteLocalFile } from './utils/localFileStore'
 import Player from './components/Player'
 import MiniPlayer from './components/MiniPlayer'
 import BottomNav from './components/BottomNav'
@@ -291,22 +291,6 @@ function App() {
           : p
       )
     )
-  }
-
-  const handleClearSongs = () => {
-    songs.forEach((s) => {
-      if (s.source === 'local' && s.fileUrl) URL.revokeObjectURL(s.fileUrl)
-    })
-    clearLocalFiles().catch(() => {})
-    setSongs([])
-    yt.stop()
-    audio.stop()
-    setCurrentSongId(null)
-    setRecentlyPlayedIds([])
-  }
-
-  const handleClearPlaylists = () => {
-    setPlaylists([])
   }
 
   const handleUrlChange = (value: string) => {

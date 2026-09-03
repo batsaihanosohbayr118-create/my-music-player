@@ -1,4 +1,6 @@
-const ICONS: Record<string, JSX.Element> = {
+import type { ReactElement } from 'react'
+
+const ICONS: Record<string, ReactElement> = {
   library: (
     <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
       <path d="M9 18V5l11-2v13" />
